@@ -1,4 +1,5 @@
 notes = ['A', 'A#', 'B', 'C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#']
+from PIL import Image, ImageFont, ImageDraw 
 
 class Guitar_String:
     def __init__(self, open_note, key):
@@ -34,7 +35,7 @@ class Guitar_String:
         else:
             output = output + "X "
         starting_note_index = notes.index(self.open_note)
-        for x in range (1, 22):
+        for x in range (1, 24):
             if notes[(x + starting_note_index) % len(notes)] in sc:
                 f = Fret(notes[(x + starting_note_index) % len(notes)])
             else:
